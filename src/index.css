@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wdth,wght@100,100..900&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans Lao', 'Segoe UI', system-ui, sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
