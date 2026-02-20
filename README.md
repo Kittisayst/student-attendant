@@ -1,16 +1,94 @@
-# React + Vite
+# 🎓 ລະບົບກວດຊື່ນັກຮຽນດ້ວຍໃບໜ້າ (Student Attendance System)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ລະບົບກວດລາຍຊື່ນັກຮຽນເຂົ້າຫ້ອງຮຽນ ໂດຍໃຊ້ການຮັບຮູ້ໃບໜ້າ (Face Recognition) ທີ່ເຮັດວຽກໃນ browser ທັງໝົດ — ບໍ່ຕ້ອງການ server.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://kittisayst.github.io/student-attendant/](https://kittisayst.github.io/student-attendant/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ ຄຸນສົມບັດ
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📷 **ສະແກນໃບໜ້າ** — ກວດຊື່ນັກຮຽນຜ່ານ webcam ແບບ real-time
+- ✏️ **ກວດຊື່ດ້ວຍມື** — ກົດ ມາ / ຂາດ / ຄອບ ສຳລັບນັກຮຽນແຕ່ລະຄົນ
+- 👥 **ຈັດການນັກຮຽນ** — ເພີ່ມ, ລຶບ, ລົງທະບຽນໃບໜ້າ
+- 📥 **Import Excel** — ນຳເຂົ້າລາຍຊື່ນັກຮຽນຈາກໄຟລ໌ `.xlsx`
+- 📄 **Template Excel** — ດາວໂຫຼດ template ສຳລັບຕື່ມຂໍ້ມູນ
+- 📊 **Export Excel / CSV** — ສົ່ງອອກລາຍງານການເຂົ້າຫ້ອງ
+- 💾 **IndexedDB** — ບັນທຶກຂໍ້ມູນໃນ browser (ຂໍ້ມູນບໍ່ຫາຍເມື່ອ refresh)
+- 🔄 **Import / Export JSON** — ສຳຮອງ ແລະ ຟື້ນຟູຂໍ້ມູນທັງໝົດ
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| ເຄື່ອງມື | ການໃຊ້ງານ |
+|---|---|
+| [React 19](https://react.dev/) | UI Framework |
+| [Vite](https://vite.dev/) | Build Tool |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Styling |
+| [face-api.js](https://github.com/justadudewhohacks/face-api.js) | Face Recognition AI |
+| [Dexie.js](https://dexie.org/) | IndexedDB Wrapper |
+| [xlsx](https://sheetjs.com/) | Excel Import/Export |
+| [react-webcam](https://github.com/mozmorris/react-webcam) | Webcam Access |
+| [date-fns](https://date-fns.org/) | Date Formatting |
+
+---
+
+## 🚀 ການຕິດຕັ້ງ (Local Development)
+
+```bash
+# Clone repo
+git clone https://github.com/Kittisayst/student-attendant.git
+cd student-attendant
+
+# ຕິດຕັ້ງ dependencies
+npm install
+
+# ເລີ່ມ dev server
+npm run dev
+```
+
+ເປີດ browser ທີ່ `http://localhost:5173`
+
+---
+
+## 📁 ໂຄງສ້າງໂປຣເຈັກ
+
+```
+src/
+├── components/
+│   ├── AttendanceScanner.jsx   # ສະແກນໃບໜ້າ
+│   ├── StudentList.jsx         # ຈັດການນັກຮຽນ + ກວດຊື່ດ້ວຍມື
+│   ├── AttendanceLog.jsx       # ລາຍງານການເຂົ້າຫ້ອງ
+│   └── RegisterFace.jsx        # ລົງທະບຽນໃບໜ້ານັກຮຽນ
+├── data/
+│   └── db.js                   # IndexedDB (Dexie) + Excel utils
+├── utils/
+│   └── faceApi.js              # face-api.js helpers
+└── App.jsx                     # Main app
+public/
+└── models/                     # face-api.js AI model weights
+```
+
+---
+
+## 📋 Format ໄຟລ໌ Excel ສຳລັບ Import
+
+| ລະຫັດນັກຮຽນ | ຊື່-ນາມສະກຸນ | ຫ້ອງຮຽນ |
+|---|---|---|
+| 001 | ສົມຊາຍ ວົງສະຫວັນ | 10A |
+| 002 | ນາງ ມາລີ ພົມມະວົງ | 10A |
+
+> ດາວໂຫຼດ template ໄດ້ທີ່ປຸ່ມ **📄 Template** ໃນແທັບ "ນັກຮຽນ"
+
+---
+
+## 🔒 ຄວາມເປັນສ່ວນຕົວ
+
+ຂໍ້ມູນທັງໝົດ (ຮູບໃບໜ້າ, face descriptor, ລາຍງານ) ຖືກເກັບໄວ້ໃນ **browser ຂອງເຈົ້າເທົ່ານັ້ນ** ຜ່ານ IndexedDB — ບໍ່ມີການສົ່ງຂໍ້ມູນໄປ server ໃດໆ.
+
+---
+
+## 📝 License
+
+MIT
