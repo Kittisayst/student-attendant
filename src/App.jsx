@@ -161,7 +161,11 @@ function App() {
       <header className="bg-slate-800/90 backdrop-blur border-b border-slate-700 px-4 py-3 sticky top-0 z-40">
         <div className="max-w-2xl mx-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-xl shrink-0">🎓</div>
+            <img
+              src={import.meta.env.BASE_URL + 'Logo.png'}
+              alt="Logo"
+              className="w-10 h-10 rounded-xl object-cover shrink-0"
+            />
             <div>
               <h1 className="text-base font-bold text-white leading-tight">ລະບົບກວດຊື່ນັກຮຽນ</h1>
               <p className="text-xs mt-0.5 flex items-center gap-1.5">
@@ -238,6 +242,38 @@ function App() {
           />
         )}
       </div>
+
+      <footer className="border-t border-slate-800 mt-8 pb-8">
+        <div className="max-w-2xl mx-auto px-4 pt-5 flex flex-col items-center gap-3">
+          <img
+            src={import.meta.env.BASE_URL + 'Logo.png'}
+            alt="Logo"
+            className="w-12 h-12 rounded-2xl object-cover opacity-80"
+          />
+          <div className="text-center">
+            <p className="text-white font-semibold text-sm">ອາຈານ ກິດຕິໄຊ ແສງທອງ</p>
+            <p className="text-slate-400 text-xs mt-0.5">ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ</p>
+          </div>
+          <div className="flex items-center gap-4 text-xs">
+            <a
+              href="tel:02097717015"
+              className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+            >
+              <span>📞</span> 020 97717015
+            </a>
+            <span className="text-slate-700">|</span>
+            <a
+              href="https://www.facebook.com/kittixai.jojo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-slate-400 hover:text-blue-400 transition-colors"
+            >
+              <span>📘</span> Facebook
+            </a>
+          </div>
+          <p className="text-slate-700 text-xs">© {new Date().getFullYear()} ລະບົບກວດຊື່ນັກຮຽນດ້ວຍໃບໜ້າ</p>
+        </div>
+      </footer>
     </div>
   )
 }
